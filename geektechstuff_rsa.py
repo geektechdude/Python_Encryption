@@ -54,3 +54,26 @@ print("Decrypted letter becomes ASCII:",decrypt_text)
     
 if m == decrypt_text:
     print("Success!!")
+
+def cipher_message(message):
+    encrypt_text = []
+    for letter in message:
+        m = ord(letter)
+        cipher_text = (m**pub_key)%r
+        encrypt_text.append(cipher_text)
+    print(encrypt_text)
+    return(encrypt_text)
+
+def decrypt_message(message):
+    decrypt_text = ""
+    for letter in message:
+        c = letter
+        decrypt_letter = (c**priv_key)%r
+        ascii_convert = chr(decrypt_letter)
+        decrypt_text = decrypt_text + ascii_convert
+    print(decrypt_text)
+    return(decrypt_text)
+
+# Testing
+test = cipher_message("geektechstuff is an awesome website")
+decrypt_message(test)
