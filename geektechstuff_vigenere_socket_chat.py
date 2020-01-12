@@ -127,7 +127,7 @@ def vigenere_enc(message):
             key_position = key_position + 1
             # changes the original of the input string character
             new_position = position + key_character_position
-            if new_position > 26:
+            if new_position >= 26:
                 new_position = new_position - 26
             new_character = alphabet[new_position]
             enc_string = enc_string + new_character
@@ -167,7 +167,7 @@ def vigenere_dec(message):
             key_position = key_position + 1
             # changes the original of the input string character
             new_position = position - key_character_position
-            if new_position > 26:
+            if new_position >= 26:
                 new_position = new_position + 26
             new_character = alphabet[new_position]
             dec_string = dec_string + new_character
